@@ -8,7 +8,7 @@ const watermarkPath = "./logo-water-mark.png";
 const targetWidth = 800;
 const targetHeight = 600;
 const watermarkSize = 100;
-// Çıkış klasörünü oluştur
+
 if (!fs.existsSync(outputFolder)) {
   fs.mkdirSync(outputFolder);
 }
