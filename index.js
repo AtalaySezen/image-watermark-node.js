@@ -1,10 +1,9 @@
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
-
 const inputFolder = "./images";
 const outputFolder = "./watermarked-images";
-const watermarkPath = "./logo-water-mark.png";
+const watermarkPath = "./watermark-test.png";
 const targetWidth = 800;
 const targetHeight = 600;
 const watermarkSize = 100;
@@ -13,7 +12,6 @@ if (!fs.existsSync(outputFolder)) {
   fs.mkdirSync(outputFolder);
 }
 
-// Watermark ekleme fonksiyonu
 async function addWatermark(inputImagePath, outputImagePath, watermarkPath) {
   const image = sharp(inputImagePath).resize(targetWidth, targetHeight);
   const watermark = await sharp(watermarkPath).resize(watermarkSize).toBuffer();
